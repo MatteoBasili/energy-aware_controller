@@ -15,6 +15,7 @@ const (
         LabelReporter         = "reporter"
         LabelWorkload         = "destination_workload"
         LabelPod              = "pod_name"
+        LabelContainerName    = "container_name"
         LabelContainerNS      = "container_namespace"
         LabelMode             = "mode"
 )
@@ -23,6 +24,9 @@ const (
 
 const (
         ReporterDestination = "destination"
+
+        ContainerIstioProxy = "istio-proxy"
+        ContainerIstioInit  = "istio-init"
 
         ModeDynamic = "dynamic"
         ModeIdle    = "idle"

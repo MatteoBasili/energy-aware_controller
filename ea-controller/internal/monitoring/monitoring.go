@@ -124,13 +124,16 @@ func getVariantPower(c *prometheus.Client, cfg config.Config, mode string) map[s
 	sum by (%s)(
 		rate(%s{
 			%s="%s",
-			%s="%s"
+			%s="%s",
+			%s!~"%s|%s"
 		}[%s])
 	)
 	`,	constants.LabelPod,
         	constants.MetricKeplerEnergy,
         	constants.LabelContainerNS, cfg.Namespace,
         	constants.LabelMode, mode,
+                constants.LabelContainerName,
+                constants.ContainerIstioProxy, constants.ContainerIstioInit,
         	cfg.RateInterval,
 	)
 
